@@ -1,0 +1,25 @@
+= Classification of GitHub readme files
+
+This project aims to find the best method for GitHub readme files classification in the meaning of quality. It is being developed during SummerCamp 2016 organized by http://datalab.fit.cvut.cz/[Data Science Laboratory at FIT CTU].
+
+IMPORTANT: This is work in progress and is very incomplete!
+
+== Requirements
+
+Development is being done using this setup:
+
+* Node.js v4.4.7 (ES2015 features are used)
+* Python v3.5.2 (Python 3 is used)
+* Jupyter v4.1.0
+* Bash v4.3.11
+
+== Getting started
+
+. Clone this repository
+. Obtain your own https://help.github.com/articles/creating-an-access-token-for-command-line-use/[GitHub API authorization token] and save it into `GITHUB_AUTH_TOKEN` file in root directory
+. Download sample dataset using `scripts/download-sample-set.sh`
+. Extract raw features from sample dataset using `scripts/extract-features-from-readmes.sh`
+
+== License
+
+This project is MIT licensed. See `LICENSE.txt` for further info.

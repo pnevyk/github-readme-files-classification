@@ -1,0 +1,26 @@
+{
+  "name": "github-readme-files-classification",
+  "version": "0.0.1",
+  "description": "Github readme files quality classifier",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "readme",
+    "classification"
+  ],
+  "author": "Petr Nevyhoštěný <petr.nevyhosteny@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.0",
+    "commonmark": "^0.25.1",
+    "js-base64": "^2.1.9",
+    "octonode": "^0.7.6"
+  }
+}
