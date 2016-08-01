@@ -12,7 +12,7 @@ const GITHUB_AUTH_TOKEN = fs
     .readFileSync(path.join(__dirname, '..', 'GITHUB_AUTH_TOKEN'))
     .toString().slice(0, -os.EOL.length);
 
-const READMES_DIRECTORY = path.join(__dirname, '..', 'data', 'readmes');
+const READMES_DIRECTORY = path.join(__dirname, '..', 'data', 'sample');
 
 const client = github.client(GITHUB_AUTH_TOKEN);
 
