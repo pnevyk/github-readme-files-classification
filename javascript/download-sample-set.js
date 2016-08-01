@@ -78,5 +78,5 @@ function getGithubQuery(page, order) {
         sort: 'stars',
         order,
         page
-    }, (err, repos) => cb(err, repos.items.map(repo => repo.full_name)));
+    }, (err, repos) => cb(err, repos.items.map(repo => repo['full_name'])));
 }
