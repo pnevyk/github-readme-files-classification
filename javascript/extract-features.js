@@ -18,7 +18,7 @@ process.stdin.on('readable', () => {
 });
 
 process.stdin.on('end', () => {
-    let extracted = extract(parse(content.toString()));
+    let extracted = extract(parse(content));
     process.stdout.write(extracted.join(CSV_SEPARATOR) + os.EOL);
 });
 
