@@ -2,6 +2,7 @@
 
 SCRIPTDIR=`cd "$(dirname "${BASH_SOURCE[0]}")" && pwd`
 OUTPUT_FILE="$SCRIPTDIR/../data/raw.csv"
+mkdir "$SCRIPTDIR/../data/" 2> /dev/null
 
 echo "\
 Name,\
