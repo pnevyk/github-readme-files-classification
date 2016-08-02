@@ -7,7 +7,6 @@ videojs/video.js 2
 request/request 4
 dominictarr/npmd 1
 borismus/pointer.js 1
-zurb/orbit 1
 eserozvataf/laroux.js 2
 facebook/immutable-js 3
 angular/material 2
