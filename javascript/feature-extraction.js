@@ -1,26 +1,43 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
-
 const commonmark = require('commonmark');
 
-const CSV_SEPARATOR = ',';
+// returns array of extracted features which are listed above extract function below
+module.exports.extract = function (markdown) {
+    return extract(parse(markdown));
+};
 
-var content = '';
-
-process.stdin.on('readable', () => {
-    const data = process.stdin.read();
-    if (data != null) {
-        content += data.toString();
-    }
-});
-
-process.stdin.on('end', () => {
-    let extracted = extract(parse(content));
-    process.stdout.write(extracted.join(CSV_SEPARATOR) + os.EOL);
-});
+// returns the list of features which are extracter by this module
+module.exports.list = function () {
+    return [
+        'Name',
+        'Document length',
+        'Number of sections',
+        'Number of code blocks',
+        'Code blocks length',
+        'Number of links',
+        'Number of images',
+        'Usage/Examples text length',
+        'Usage/Examples code blocks length',
+        'Usage/Examples code blocks count',
+        'Usage/Examples link presence',
+        'Getting started/Documentation/API text length',
+        'Getting started/Documentation/API code blocks length',
+        'Getting started/Documentation/API link presence',
+        'Installation/Download plain and code length',
+        'Installation/Download link presence',
+        'Support/Community/Resources links',
+        'Build status badge presence',
+        'Code coverage badge presence',
+        'Code quality badge presence',
+        'Dependency status badge presence',
+        'Deprecation status',
+        'License section/link presence',
+        'Contributing section/link presence',
+        'Authors/Team section/link presence',
+        'Troubleshooting section/link presence',
+    ];
+};
 
 /*
 Returns the structure represented as:
