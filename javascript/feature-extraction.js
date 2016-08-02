@@ -4,6 +4,7 @@ const commonmark = require('commonmark');
 
 // returns array of extracted features which are listed above extract function below
 module.exports.extract = function (markdown) {
+    console.dir(parse(markdown));
     return extract(parse(markdown));
 };
 
@@ -306,7 +307,9 @@ function extract(struct) {
     function getDeprecationStatus(section) {
         let needPattern = /(?:look(?:ing)?|need).{,30}maintain(?:er(?:ship))/;
         let mentionPattern = /maintain(?:er(?:ship))/;
-        if (needPattern.test(section.plainContent)) {
+        let deprecatedPattern = /deprecated?/;
+        if (needPattern.test(section.plainContent) ||
+            deprecatedPattern.test(section.plainContent)) {
             return 1;
         } else if (mentionPattern.test(section.plainContent)) {
             return 0.5;
