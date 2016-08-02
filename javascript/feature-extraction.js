@@ -4,7 +4,6 @@ const commonmark = require('commonmark');
 
 // returns array of extracted features which are listed above extract function below
 module.exports.extract = function (markdown) {
-    console.dir(parse(markdown));
     return extract(parse(markdown));
 };
 
