@@ -1,3 +1,4 @@
 node_modules/
+jupyter/.ipynb_checkpoints
 GITHUB_AUTH_TOKEN
 data/
