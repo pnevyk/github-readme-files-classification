@@ -306,7 +306,7 @@ function extract(struct) {
     function getDeprecationStatus(section) {
         let needPattern = /(?:look(?:ing)?|need).{,30}maintain(?:er(?:ship))/;
         let mentionPattern = /maintain(?:er(?:ship))/;
-        let deprecatedPattern = /deprecated?/;
+        let deprecatedPattern = /(?:deprecated?|no\slonger\smaintained|abandoned)/;
         if (needPattern.test(section.plainContent) ||
             deprecatedPattern.test(section.plainContent)) {
             return 1;
