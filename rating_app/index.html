@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Readme rating</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Readme rating</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div id="controls" class="col-md-6">
+                <button class="btn btn-danger">Very bad</button>
+                <button class="btn btn-primary">Can be better</button>
+                <button class="btn btn-primary">Average</button>
+                <button class="btn btn-primary">Almost great</button>
+                <button class="btn btn-success">Amazing</button>
+            </div>
+            <div class="col-md-6">
+                <button id="clear-storage" class="btn btn-danger">Clear storage</button>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Content:</h2>
+            <div id="content" class="col-md-12"></div>
+        </div>
+    </div>
+
+    <script src="node_modules/superagent/superagent.js" charset="utf-8"></script>
+    <script src="node_modules/marked/marked.min.js" charset="utf-8"></script>
+    <script src="js/storage.js" charset="utf-8"></script>
+    <script src="js/dom.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+</body>
+
+</html>

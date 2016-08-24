@@ -3,3 +3,5 @@ jupyter/.ipynb_checkpoints
 GITHUB_AUTH_TOKEN
 data/
 python/__pycache__
+rating_app/node_modules
+rating_app/results.txt

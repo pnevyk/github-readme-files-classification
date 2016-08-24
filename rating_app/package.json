@@ -1,0 +1,30 @@
+{
+  "name": "readme-rating-app",
+  "version": "1.0.0",
+  "description": "Simple web application for readme rating",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "marked": "^0.3.6",
+    "express": "^4.14.0",
+    "superagent": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnevyk/github-readme-files-classification.git"
+  },
+  "keywords": [
+    "readme",
+    "rating"
+  ],
+  "author": "Petr Nevyhoštěný <petr.nevyhosteny@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnevyk/github-readme-files-classification/issues"
+  },
+  "homepage": "https://github.com/pnevyk/github-readme-files-classification#readme"
+}
