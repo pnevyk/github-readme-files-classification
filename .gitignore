@@ -4,3 +4,5 @@ GITHUB_AUTH_TOKEN
 data/
 rating_app/node_modules
 rating_app/results.txt
+classifier/__pycache__
+classifier/serialized
