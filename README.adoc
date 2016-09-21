@@ -11,6 +11,7 @@ Development is being done using this setup:
 * Node.js v4.4.7 (ES2015 features are used)
 * Python v3.5.2 (Python 3 is used)
 * Jupyter v4.1.0
+* Anaconda 3 with Conda v4.1.11
 * Bash v4.3.11
 
 == Getting started
@@ -21,6 +22,8 @@ Development is being done using this setup:
 . Extract raw features from sample dataset using `scripts/extract-sample-dataset.sh`
 . Download manually classified dataset using `scripts/download-classified-dataset.sh`
 . Extract raw features from manually classified dataset using `scripts/extract-classified-dataset.sh`
+. Run all the three jupyter notebooks in following order: `Data preprocessing`, `Labeling`, `Classification`
+. Classify a readme using `scripts/classify.sh` passing a readme file as the first argument.footnote:[Note that this script requires a python binary with bounded packages. You have to specify the path to this binary in the `classify.sh` script. The default one is: `~/anaconda3/bin/python`.]
 
 == License
 
