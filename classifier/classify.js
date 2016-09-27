@@ -25,8 +25,7 @@ fs.stat(filename, (err, stats) => {
             let classifier = spawn(PYTHON_PATH, [CLASSIFIER_SCRIPT, extractedFeatures.join(',')]);
 
             classifier.stdout.on('data', data => {
-                let rating = Number(data.toString());
-                console.log(`The predicted rating is ${rating}`);
+                console.log(data.toString().trim());
             });
 
             classifier.stderr.on('data', data => {
