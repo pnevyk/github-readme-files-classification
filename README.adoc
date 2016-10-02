@@ -17,7 +17,10 @@ Development is being done using this setup:
 == Getting started
 
 . Clone this repository
-. Obtain your own https://help.github.com/articles/creating-an-access-token-for-command-line-use/[GitHub API authorization token] and save it into `GITHUB_AUTH_TOKEN` file in root directory
+. Run `npm install`
+. Install required conda packages: `conda install -c anaconda seaborn`, `conda install -c glemaitre imbalanced-learn`
+. Obtain your own
+ https://help.github.com/articles/creating-an-access-token-for-command-line-use/[GitHub API authorization token] and save it into `GITHUB_AUTH_TOKEN` file in root directory
 . Download sample dataset using `scripts/download-sample-dataset.sh` (type number of repos to be downloaded)
 . Extract raw features from sample dataset using `scripts/extract-sample-dataset.sh`
 . Download manually classified dataset using `scripts/download-classified-dataset.sh`
