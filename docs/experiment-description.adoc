@@ -1,0 +1,27 @@
+= Classification of GitHub readme files
+
+== Experiment description
+
+The goal of the project is to explore which methods is suited for GitHub readme files classification in the meaning of quality. The readme quality can have very personal feeling but (I hope that) objective indicators exist. Just to name a few:
+
+* *Document length* -- There are certainly cases when a readme document length is long but still does not contain a lot of useful information but I hope that usually when an author put the work in to have long readme, there is some valuable information and hence the classifier should take it into account.
+
+* *Length of important sections* -- These sections are for example Usage/Examples, API Docs, How to install or License. Not only text length, but also code blocks length and count are considered.
+
+* *Additional complements* -- By complements I mean things like badges which have a graphical form and contain information about the project collected from external services, such as build servers, code coverage tools or dependency status tools. Moreover, links to known support services (such as Slack, etc.) are also useful. Images can help the user to understand the project better as well.
+
+The feature extraction here is perhaps the most important phase. Features are extracted from the text of the readme. No other features are given into classification process. It worths to consider if NLP techniques should be used, i.e. whether they bring higher accuracy over heuristic-only model which extracts just features specified by me. I decided not to use NLP because it would make the process more complex.
+
+Numeric features extracted from readme files are normalized to [0,1] range and then scaled by standard scaling method. Visualizations where samples were projected into 2D space did not show any obvious clusters.
+
+Since I don't have any labeled dataset, I had to make one. I tried few methods. The success of method I measured how accurate was random forest classifier which was learned on assigned data.
+
+Method cluster-then-label didn't yield good results as trained random forest didn't overcome 50% accuracy regardless clustering algorithm was used. So semi-supervised learning approach was taken. In `scikit-learn` library there are only graph-based semi-supervised methods. The taken one is called label spreading, it builds something like similarity matrix using a kernel (in my case the kernel is KNN) and then gradually assigns labels to yet not labeled samples.
+
+Downloaded dataset is really imbalanced as there is big number of bad (empty or very short) readmes and when rating number increases the count of corresponding readme files decreases. However, attempts of class balancing using various techniques didn't improve or even downgrade the performance.
+
+The final labels assigned random forest classifier trained on data acquired using mentioned semi-supervised method. Different classification algorithms were tried but random forest gave the best results.
+
+I have chosen a "five-star" rating classification because it gives user more information than binary classification. The interesting thing was that despite the labels were assigned by random forest, in actual classification it didn't outperform other methods. Actually SVM and KNN classifiers achieved higher accuracy on training set and SVM did also on testing dataset.
+
+As the conclusion, I think that my work should be validated on some crowd-annotated dataset, because this dataset is build on my personal assumptions. The measured accuracy on this data are around 88%. If the problem is transformed into binary classification, results increase to 97%. It is quite succinct but further improvement is possible without a doubt.
